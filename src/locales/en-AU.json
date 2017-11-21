@@ -308,6 +308,7 @@
   "mnoe_admin_panel.dashboard.organization.remove_app": "Remove {app_name}",
   "mnoe_admin_panel.dashboard.organization.app_connected": "{app_name} is connected!",
   "mnoe_admin_panel.dashboard.organization.app_not_connected": "{app_name} is not connected.",
+  "mnoe_admin_panel.dashboard.organization.app_never_connected": "{app_name} has never been connected.",
   "mnoe_admin_panel.dashboard.organization.add_an_app": "Add an app",
   "mnoe_admin_panel.dashboard.organization.add_a_user": "Add a user",
   "mnoe_admin_panel.dashboard.organization.create_an_order": "Create an order",

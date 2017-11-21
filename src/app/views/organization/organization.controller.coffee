@@ -56,7 +56,7 @@
     vm.status = {}
     _.map(vm.organization.active_apps,
       (app) ->
-        vm.status[app.nid] = MnoAppsInstances.isConnected(app)
+        vm.status[app.nid] = MnoAppsInstances.connectionStatus(app)
     )
     # Check the number of apps not connected (number of status equals to false)
     vm.hasDisconnectedApps = false of _.countBy(vm.status)
