@@ -12,6 +12,9 @@
     if instance.stack == 'connector' && !instance.oauth_keys then return -1
     0
 
+  @isConnected = (app) ->
+    _self.connectionStatus(app) == 1
+
   # Is the app instance connected with oauth?
   @isOauthConnected = (instance) ->
     instance.stack == 'connector' && instance.oauth_keys_valid

@@ -58,8 +58,8 @@
       (app) ->
         vm.status[app.nid] = MnoAppsInstances.connectionStatus(app)
     )
-    # Check the number of apps not connected (number of status equals to false)
-    vm.hasDisconnectedApps = false of _.countBy(vm.status)
+    # Check if some apps are not connected
+    vm.hasDisconnectedApps = !_.isEqual(_.uniq(_.values(vm.status)), [1])
 
   vm.updateOrganization = ->
     vm.editmode = false

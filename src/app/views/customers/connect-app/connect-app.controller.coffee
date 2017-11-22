@@ -16,6 +16,9 @@
   # App Connect modal
   #====================================
   vm.connectAppInstance = (app) ->
+    if app.stack == 'cloud'
+      $window.open("/mnoe/launch/#{app.uid}", '_blank')
+      return
     switch app.nid
       when "xero" then modalInfo = {
         template: "app/views/customers/app-connect-modal/app-connect-modal-xero.html",
