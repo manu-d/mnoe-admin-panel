@@ -6,6 +6,7 @@
   vm.users = {}
   vm.hasDisconnectedApps = false
   vm.status = {}
+  vm.mnoAppInstances = MnoAppsInstances
 
   vm.availableBillingCurrencies = MnoeAdminConfig.availableBillingCurrencies()
 
@@ -109,6 +110,13 @@
         vm.organization = angular.copy(organization)
         vm.updateStatus()
     )
+
+  vm.syncApp = (app) ->
+    $.ajax
+      url: MnoAppsInstances.dataSyncPath(app)
+      type: 'get'
+      headers:
+        'Access-Control-Allow-Origin': 'http://localhost:3000'
 
   # Remove app modal
   vm.openRemoveAppModal = (app, index) ->

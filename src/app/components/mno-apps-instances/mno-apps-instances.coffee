@@ -8,12 +8,17 @@
   # 0 => Disconnected
   # 1 => Connected
   @connectionStatus = (instance) ->
-    if instance.stack == 'cube' || instance.stack == 'cloud' || _self.isOauthConnected(instance) then return 1
+    if instance.stack == 'cube' || _self.isCloudConnected(instance) || _self.isOauthConnected(instance) then return 1
     if instance.stack == 'connector' && !instance.oauth_keys then return -1
     0
 
   @isConnected = (app) ->
     _self.connectionStatus(app) == 1
+
+  @isCloudConnected = (instance) ->
+    instance.stack == 'cloud' &&
+    (!instance.addon_organization ||
+      instance.addon_organization.has_account_linked)
 
   # Is the app instance connected with oauth?
   @isOauthConnected = (instance) ->

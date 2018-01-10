@@ -72,6 +72,14 @@
         left: 0;
         cursor: pointer;
       }
+      .app-sync {
+        display: none;
+        position: absolute;
+        padding: 5px;
+        bottom:0;
+        right: 0;
+        cursor: pointer;
+      }
 
       span {
         white-space: nowrap;
@@ -79,6 +87,10 @@
     }
 
     &:hover .app-remove {
+      display: block;
+    }
+
+    &:hover .app-sync {
       display: block;
     }
   }
